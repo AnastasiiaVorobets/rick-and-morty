@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
-import './App.scss';
+import './global.scss';
+import EpisodesPage from './pages/EpisodesPage';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={} />
+          <Route path="/" element={<EpisodesPage />} />
         </Routes>
       </Router>
     </div>
