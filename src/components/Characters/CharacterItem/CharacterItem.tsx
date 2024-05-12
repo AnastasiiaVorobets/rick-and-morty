@@ -21,7 +21,7 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character: {
           src={image}
           alt={name}
         />
-        <h3 className="item__info">{name}</h3>
+        <h3 className="item__title">{name}</h3>
         <p className="item__info">Status: {status}</p>
         <p className="item__info">Species: {species}</p>
         <p className="item__info">Gender: {gender}</p>

@@ -73,7 +73,6 @@ h1 {
   }
 }
 
-
 @media (max-width: 850px) {
   .list {
     margin: 20px 40px;
@@ -118,4 +117,9 @@ button {
   &:hover {
     background-color: #2e2f30;
   }
+}
+
+.loading {
+  text-align: center;
+  font-size: 30px;
 }
