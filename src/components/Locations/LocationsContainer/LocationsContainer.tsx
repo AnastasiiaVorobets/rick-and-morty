@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import LocationList from '../LocationList/LocationList';
 import Pagination from '../../Shared/Pagination/Pagination';
 import { Location } from '../../../types/location';

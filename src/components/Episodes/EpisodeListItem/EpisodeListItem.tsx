@@ -1,5 +1,6 @@
 import React from 'react';
 import { Episode } from '../../../types/episode';
+import { formatDateString } from '../../../helpers/formatDateString';
 
 interface EpisodeListItemProps {
   episode: Episode;
@@ -22,10 +23,14 @@ const EpisodeListItem: React.FC<EpisodeListItemProps> = ({ episode, onEpisodeSel
           alt="Placeholder"
           className="item__image"
         />
-        <h3 className="item__title">{name}</h3>
-        <p className="item__info">{episodeNumber}</p>
-        <p className="item__info">{air_date}</p>
-        <p className="item__info">{created}</p>
+        <div>
+          <h3 className="item__title">{id} {name}</h3>
+          <div className='item__info-block'>
+            <p className="item__info">{episodeNumber}</p>
+            <p className="item__info">Air Date: {air_date}</p>
+            <p className="item__info">Created: {formatDateString(created)}</p>
+          </div>
+        </div>
       </div>
       {showButton && <button onClick={handleButtonClick}>Info</button>}
     </div>

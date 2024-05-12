@@ -30,7 +30,6 @@ h1 {
   align-items: center;
   border: 0.5px solid black;
   border-radius: 3px;
-  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -69,6 +68,12 @@ h1 {
 
     &-property {
       font-style: italic;
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
     }
   }
 }

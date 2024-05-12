@@ -34,3 +34,12 @@
   color: #999;
   cursor: pointer;
 }
+
+@media (max-width: 850px) {
+  .modal {
+    &-content {
+      padding: 20px;
+      max-width: 400px;
+    }
+  }
+}

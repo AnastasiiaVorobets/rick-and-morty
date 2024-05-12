@@ -5,6 +5,7 @@ interface CharacterItemProps {
 }
 
 const CharacterItem: React.FC<CharacterItemProps> = ({ character: { 
+  id,
   image,
   name,
   status,
@@ -21,12 +22,16 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character: {
           src={image}
           alt={name}
         />
-        <h3 className="item__title">{name}</h3>
-        <p className="item__info">Status: {status}</p>
-        <p className="item__info">Species: {species}</p>
-        <p className="item__info">Gender: {gender}</p>
-        <p className="item__info item__info-property">Origin: {originName}</p>
-        <p className="item__info item__info-property">Location: {locationName}</p>
+        <div>
+          <h3 className="item__title">{id} {name}</h3>
+          <div className='item__info-block'>
+            <p className="item__info">Status: {status}</p>
+            <p className="item__info">Species: {species}</p>
+            <p className="item__info">Gender: {gender}</p>
+            <p className="item__info item__info-property">Origin: {originName}</p>
+            <p className="item__info item__info-property">Location: {locationName}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

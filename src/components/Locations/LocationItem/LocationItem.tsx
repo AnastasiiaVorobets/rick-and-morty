@@ -6,7 +6,7 @@ interface LocationItemProps {
 }
 
 const LocationItem: React.FC<LocationItemProps> = ({ location }) => {
-  const { name, type, dimension } = location;
+  const { id, name, type, dimension } = location;
 
   return (
     <div className="item">
@@ -16,9 +16,13 @@ const LocationItem: React.FC<LocationItemProps> = ({ location }) => {
           alt="Placeholder"
           className="item__image"
         />
-        <h3 className="item__title">{name}</h3>
-        <p className="item__info">Type: {type}</p>
-        <p className="item__info">Dimension: {dimension}</p>
+        <div>
+          <h3 className="item__title">{id} {name}</h3>
+          <div className='item__info-block'>
+            <p className="item__info">Type: {type}</p>
+            <p className="item__info">Dimension: {dimension}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
