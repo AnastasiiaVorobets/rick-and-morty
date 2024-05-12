@@ -1,4 +1,7 @@
 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   background-color: black;
   color: white;
 }
@@ -12,7 +15,6 @@ h1 {
 
 .list {
   margin: 40px 80px;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -24,6 +26,7 @@ h1 {
 }
 
 .item {
+  margin: 20px;
   padding: 15px;
   display: flex;
   justify-content: space-between;

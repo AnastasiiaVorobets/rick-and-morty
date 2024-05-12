@@ -22,8 +22,8 @@ const EpisodeModal: React.FC<EpisodeModalProps> = ({ episode, onCloseModal }) =>
         <EpisodeListItem episode={episode} onEpisodeSelect={onCloseModal} showButton={false} />
         <div className="characters">
           {showMore ? (
-            episode.characters.map((character, index) => (
-              <p key={index}>{character}</p>
+            episode.characters.map((character) => (
+              <p key={character}>{character}</p>
             ))
           ) : (
             episode.characters.slice(0, 3).map((character) => (

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import './index.scss';
 import client from './graphql/client';
 
 const root = document.getElementById('root') as HTMLElement;

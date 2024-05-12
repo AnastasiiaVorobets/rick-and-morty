@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
-import './global.scss';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import EpisodesPage from './pages/EpisodesPage';
 import CharacterPage from './pages/CharactersPage';
 import LocationsPage from './pages/LocationsPage';
+import './styles/reset.scss';
+import './styles/globalStyles.scss';
 
 function App() {
   return (

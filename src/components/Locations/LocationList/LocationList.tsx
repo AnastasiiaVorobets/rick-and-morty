@@ -1,7 +1,6 @@
 import React from 'react';
 import { Location } from '../../../types/location';
 import LocationItem from '../LocationItem/LocationItem';
-import '../../../global.scss';
 
 interface LocationListProps {
   locations: Location[];
