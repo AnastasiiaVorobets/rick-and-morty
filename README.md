@@ -34,3 +34,10 @@
 - TypeScript
 - SCSS
 - Fetch API | Axios | GraphQL
+
+## To run the project
+- Make a fork
+- Clone the project
+- Install dependencies (`npm install` / `npm install sass` / `npm install react-router-dom` / `npm install axios` / `npm install @apollo/client graphql`)
+- Run `npm start`
+- Open `http://localhost:3000/`
