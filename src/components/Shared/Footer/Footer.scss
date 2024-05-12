@@ -1,0 +1,33 @@
+.footer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  background-color: #212121;
+  color: #fff;
+
+  &__info {
+    margin-bottom: 20px;
+
+    &-item {
+      margin: 5px 0;
+    }
+  }
+
+  &__tech-stack,
+  &__api {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__api-link {
+    color: #61dafb;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
