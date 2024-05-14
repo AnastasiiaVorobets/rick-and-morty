@@ -3,15 +3,12 @@ import './Pagination.scss';
 
 interface PaginationProps {
   currentPage: number;
-  totalItems: number;
-  itemsPerPage: number;
+  totalPages: number;
   onPageChange: (pageNumber: number) => void;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
-  currentPage, totalItems, itemsPerPage, onPageChange }) => {
-
-  const totalPages = useMemo(() => Math.ceil(totalItems / itemsPerPage), [totalItems, itemsPerPage]);
+  currentPage, totalPages, onPageChange }) => {
 
   const pages = useMemo(() => {
     const pageNumbers = [];
@@ -21,14 +18,26 @@ const Pagination: React.FC<PaginationProps> = ({
     return pageNumbers;
   }, [totalPages]);
 
+  const visiblePages = pages.slice(Math.max(0, currentPage - 3), Math.min(pages.length, currentPage + 2));
+
   return (
     <nav className="pagination-container">
       <ul className="pagination">
-        {pages.map((pageNumber) => (
+        {currentPage > 1 && (
+          <li className="arrow" onClick={() => onPageChange(currentPage - 1)}>
+            <span>«</span>
+          </li>
+        )}
+        {visiblePages.map((pageNumber) => (
           <li key={pageNumber} className={currentPage === pageNumber ? 'active' : ''}>
-            <button onClick={() => onPageChange(pageNumber)}>{pageNumber}</button> 
+            <button onClick={() => onPageChange(pageNumber)}>{pageNumber}</button>
           </li>
         ))}
+        {currentPage < totalPages && (
+          <li className="arrow" onClick={() => onPageChange(currentPage + 1)}>
+            <span>»</span>
+          </li>
+        )}
       </ul>
     </nav>
   );

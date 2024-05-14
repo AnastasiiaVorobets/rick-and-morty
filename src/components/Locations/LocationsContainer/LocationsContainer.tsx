@@ -8,10 +8,7 @@ import { GET_LOCATIONS } from '../../../graphql/queries';
 
 const LocationsContainer: React.FC = () => {
   const [locations, setLocations] = useState<Location[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const { loading, data } = useQuery(GET_LOCATIONS);
-
-  const itemsPerPage = 8;
 
   useEffect(() => {
     if (data && data.locations) {
@@ -19,28 +16,12 @@ const LocationsContainer: React.FC = () => {
     }
   }, [data]);
 
-  const handlePageChange = useMemo(() => (page: number) => {
-    setCurrentPage(page);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }, [setCurrentPage]);
-
-  const locationsToShow = useMemo(() => paginateList(currentPage, itemsPerPage, locations), [currentPage, locations, itemsPerPage]);
-
   return loading ? (
     <p className='loading'>Loading...</p>
   ) : (
     <div>
       <h1>Locations</h1>
-      <LocationList locations={locationsToShow} />
-      <Pagination
-        currentPage={currentPage}
-        totalItems={locations.length}
-        itemsPerPage={itemsPerPage}
-        onPageChange={handlePageChange}
-      />
+      <LocationList locations={locations} />
     </div>
   );
 };
